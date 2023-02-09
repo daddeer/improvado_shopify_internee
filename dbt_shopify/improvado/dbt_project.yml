@@ -36,3 +36,11 @@ models:
     # Config indicated by + and applies to all files under models/example/
     example:
       +materialized: view
+
+vars:
+    shopify_database: dbtshopify
+    shopify_schema: improvado_shopify
+vars:
+     shopify_using_fulfillment_event: true # false by default
+vars:
+    shopify_timezone: "America/Mexico_City" # Replace with your timezone
