@@ -34,13 +34,7 @@ clean-targets:         # directories to be removed by `dbt clean`
 models:
   improvado:
     # Config indicated by + and applies to all files under models/example/
-    example:
+    stg_models:
+      +materialized: table
+    sources:
       +materialized: view
-
-vars:
-    shopify_database: dbtshopify
-    shopify_schema: improvado_shopify
-vars:
-     shopify_using_fulfillment_event: true # false by default
-vars:
-    shopify_timezone: "America/Mexico_City" # Replace with your timezone
