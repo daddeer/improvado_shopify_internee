@@ -5,6 +5,6 @@ sources:
     database: dbtshopify
     schema: austin_incidents
     tables:
-      - name: stg_incidents
+      - name: austin_incidents_2008
       - name: austin_incidents_2016
       - name: austin_incidents_2010

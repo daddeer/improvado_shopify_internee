@@ -33,8 +33,8 @@ clean-targets:         # directories to be removed by `dbt clean`
 # files using the `{{ config(...) }}` macro.
 models:
   improvado:
-    # Config indicated by + and applies to all files under models/example/
     stg_models:
       +materialized: table
     sources:
       +materialized: view
+  
