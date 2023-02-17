@@ -1,4 +1,6 @@
-with incidents as (
+{{ config(materialized='table') }}
+
+with incidents_2016 as (
 
 Select 
  unique_key as id, 
@@ -9,4 +11,4 @@ Select
 From {{ source('austin_incidents','austin_incidents_2016')}}
 )
 
-Select * from incidents
+Select * from incidents_2016

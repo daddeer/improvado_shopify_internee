@@ -1,10 +1,10 @@
 with source as (
-      select * from {{ source('austin_incidents', 'stg_incidents') }}
+      select * from {{ source('austin_incidents', 'austin_incidents_2008') }}
 ),
 src_incidents as (
     select
-        id,
-        des,
+        unique_key as id,
+        descript as des,
         date,
         time,
         address
