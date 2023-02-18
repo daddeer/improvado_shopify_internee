@@ -17,10 +17,15 @@ jobs:
         run: pip install dbt-bigquery
       - name: Print DBT_PROFILES_DIR
         run: echo $DBT_PROFILES_DIR
+      - name: Install Dependencies
+        env:
+          DBT_PROFILES_DIR: ${{ github.workspace }}/dbt_shopify/improvado/
+        run: |
+          cd ${{ github.workspace }}/dbt_shopify/improvado/
+          dbt deps --profiles-dir . --profile improvado
       - name: Run dbt
         env:
           DBT_PROFILES_DIR: ${{ github.workspace }}/dbt_shopify/improvado/
         run: |
           cd ${{ github.workspace }}/dbt_shopify/improvado/
-            dbt run --profiles-dir . --profile improvado
-
+          dbt run --profiles-dir . --profile improvado
