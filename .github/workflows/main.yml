@@ -1,10 +1,3 @@
-name: dbt deploy
-
-on:
-  schedule:
-    - cron: "0 0 * * *"
-  workflow_dispatch:
-
 jobs:
   dbt-run:
     runs-on: ubuntu-latest
@@ -15,9 +8,8 @@ jobs:
           python-version: '3.8'
       - name: Install dbt
         run: pip install dbt-bigquery
-      - name: Print DBT_PROFILES_DIR
-        run: echo $DBT_PROFILES_DIR
       - name: Run dbt
         env:
-          DBT_PROFILES_DIR: ${{ github.workspace }}/improvado_shopify_internee/dbt_shopify/improvado/
-        run: dbt run --profiles-dir ../ --profile ${{ secrets.DBT_PROFILE }}
+          DBT_PROFILES_DIR: ${{ github.workspace }}
+        working-directory: ./improvado_shopify_internee/dbt_shopify/improvado/
+        run: dbt run --profiles-dir . --profile ${{ secrets.DBT_PROFILE }}
