@@ -14,7 +14,7 @@ jobs:
         with:
           python-version: '3.8'
       - name: Install dbt
-        run: pip install dbt
+        run: pip install dbt-bigquery
       - name: Run dbt
         env:
           DBT_PROFILES_DIR: ${{ github.workspace }}
