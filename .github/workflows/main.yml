@@ -22,4 +22,5 @@ jobs:
           DBT_PROFILES_DIR: ${{ github.workspace }}/dbt_shopify/improvado/
         run: |
           cd ${{ github.workspace }}/dbt_shopify/improvado/
-          dbt run --profiles-dir . --profile ${{ secrets.DBT_PROFILE }}
+            dbt run --profiles-dir . --profile improvado
+
