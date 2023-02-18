@@ -69,3 +69,45 @@ There are 2 unused configuration paths:
 [0m02:57:13.532215 [warn ] [MainThread]: No nodes selected!
 [0m02:57:13.533216 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002048475FED0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000020484FAA710>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000020484FA84D0>]}
 [0m02:57:13.533216 [debug] [MainThread]: Flushing usage events
+
+
+============================== 2023-02-18 03:25:35.336721 | 585e4432-d0be-43de-ae57-ddfba76e5d02 ==============================
+[0m03:25:35.336721 [info ] [MainThread]: Running with dbt=1.4.1
+[0m03:25:35.336721 [debug] [MainThread]: running dbt with arguments {'write_json': True, 'use_colors': True, 'printer_width': 80, 'version_check': True, 'partial_parse': True, 'static_parser': True, 'profiles_dir': 'C:\\Users\\oolui\\.dbt', 'send_anonymous_usage_stats': True, 'quiet': False, 'no_print': False, 'cache_selected_only': False, 'resource_types': [], 'output': 'selector', 'indirect_selection': 'eager', 'which': 'list'}
+[0m03:25:35.336721 [debug] [MainThread]: Tracking: tracking
+[0m03:25:35.357786 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000024F8F94EED0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000024F8E29D350>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000024F8F95F350>]}
+[0m03:25:35.504806 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 0 files changed.
+[0m03:25:35.505789 [debug] [MainThread]: Partial parsing enabled, no changes found, skipping parsing
+[0m03:25:35.505789 [warn ] [MainThread]: [[33mWARNING[0m]: Configuration paths exist in your dbt_project.yml file which do not apply to any resources.
+There are 2 unused configuration paths:
+- models.improvado.stg_models
+- models.improvado.sources
+[0m03:25:35.506860 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '585e4432-d0be-43de-ae57-ddfba76e5d02', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000024F909B01D0>]}
+[0m03:25:35.506860 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '585e4432-d0be-43de-ae57-ddfba76e5d02', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000024F8F99C450>]}
+[0m03:25:35.506860 [info ] [MainThread]: Found 0 models, 0 tests, 0 snapshots, 0 analyses, 334 macros, 0 operations, 0 seed files, 0 sources, 0 exposures, 0 metrics
+[0m03:25:35.506860 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '585e4432-d0be-43de-ae57-ddfba76e5d02', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000024F8F9255D0>]}
+[0m03:25:35.506860 [warn ] [MainThread]: No nodes selected!
+[0m03:25:35.506860 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000024F8F99C610>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000024F8F99CCD0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000024F8F99CC50>]}
+[0m03:25:35.518350 [debug] [MainThread]: Flushing usage events
+
+
+============================== 2023-02-18 03:26:38.063977 | 9c47f378-1e85-4bbd-9c1b-a2efa3777076 ==============================
+[0m03:26:38.063977 [info ] [MainThread]: Running with dbt=1.4.1
+[0m03:26:38.063977 [debug] [MainThread]: running dbt with arguments {'write_json': True, 'use_colors': True, 'printer_width': 80, 'version_check': True, 'partial_parse': True, 'static_parser': True, 'profiles_dir': 'C:\\Users\\oolui\\.dbt', 'send_anonymous_usage_stats': True, 'quiet': False, 'no_print': False, 'cache_selected_only': False, 'which': 'run', 'rpc_method': 'run', 'indirect_selection': 'eager'}
+[0m03:26:38.063977 [debug] [MainThread]: Tracking: tracking
+[0m03:26:38.079542 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002D75397B210>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002D75317E150>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002D75398A3D0>]}
+[0m03:26:38.470825 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 0 files changed.
+[0m03:26:38.470825 [debug] [MainThread]: Partial parsing enabled, no changes found, skipping parsing
+[0m03:26:38.470825 [warn ] [MainThread]: [[33mWARNING[0m]: Configuration paths exist in your dbt_project.yml file which do not apply to any resources.
+There are 2 unused configuration paths:
+- models.improvado.stg_models
+- models.improvado.sources
+[0m03:26:38.491053 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '9c47f378-1e85-4bbd-9c1b-a2efa3777076', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002D7549ED950>]}
+[0m03:26:38.498877 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '9c47f378-1e85-4bbd-9c1b-a2efa3777076', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002D7539096D0>]}
+[0m03:26:38.498877 [info ] [MainThread]: Found 0 models, 0 tests, 0 snapshots, 0 analyses, 334 macros, 0 operations, 0 seed files, 0 sources, 0 exposures, 0 metrics
+[0m03:26:38.499879 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '9c47f378-1e85-4bbd-9c1b-a2efa3777076', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002D7538A91D0>]}
+[0m03:26:38.501053 [info ] [MainThread]: 
+[0m03:26:38.502055 [warn ] [MainThread]: Nothing to do. Try checking your model configs and model specification args
+[0m03:26:38.503059 [debug] [MainThread]: Command end result
+[0m03:26:38.510058 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002D754A0CFD0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002D754A0C5D0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002D754A0C490>]}
+[0m03:26:38.511059 [debug] [MainThread]: Flushing usage events

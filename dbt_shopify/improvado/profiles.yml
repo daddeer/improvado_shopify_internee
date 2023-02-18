@@ -1,0 +1,11 @@
+improvado:
+  outputs:
+    dev:
+      <optional_config>: <value>
+      dataset: austin_incidents
+      keyfile: C:\Users\oolui\OneDrive\Escritorio\improvado.json
+      method: service-account
+      project: dbtshopify
+      threads: 1
+      type: bigquery
+  target: dev
