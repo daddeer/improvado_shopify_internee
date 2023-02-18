@@ -26,9 +26,8 @@ jobs:
       - name: Run dbt
         env:
           DBT_PROFILES_DIR: ${{ github.workspace }}/dbt_shopify/improvado/
+          BIGQUERY_KEY: ${{ secrets.BIGQUERY_KEY }}
         run: |
           cd ${{ github.workspace }}/dbt_shopify/improvado/
           dbt run --profiles-dir . --profile improvado
-
-
 
