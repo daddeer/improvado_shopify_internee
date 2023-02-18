@@ -3,7 +3,7 @@ improvado:
     dev:
       <optional_config>: <value>
       dataset: austin_incidents
-      keyfile: "improvado_shopify_internee/dbt_shopify/improvado/improvado.json"
+      keyfile: "{{ env_var('DBT_PROFILES_DIR') }}/improvado.json"
       method: service-account
       project: dbtshopify
       threads: 1
