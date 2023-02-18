@@ -3,7 +3,7 @@ improvado:
     dev:
       <optional_config>: <value>
       dataset: austin_incidents
-      keyfile: "{{ env_var('BIGQUERY_KEY') }}"
+      keyfile: "improvado_shopify_internee/dbt_shopify/improvado/improvado.json"
       method: service-account
       project: dbtshopify
       threads: 1
