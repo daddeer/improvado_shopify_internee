@@ -1,0 +1,51 @@
+version: 2
+
+models:
+  - name: stg_incidents_2008
+    description: incidents in austin year 2008
+    columns:
+      - name: id
+        description: Unique identifier for each incident
+        tests:
+          - unique
+          - not_null
+          - dbt_utils.at_least_one
+      - name: des
+        description: type of incident
+        tests:
+          - not_null
+          - dbt_utils.not_accepted_values:
+              values: ['(', ' ', ')','-']
+          - dbt_utils.at_least_one
+  - name: stg_incidents_2010
+    description: incidents in austin year 2010
+    columns:
+      - name: id
+        description: Unique identifier for each incident
+        tests:
+          - unique
+          - not_null
+          - dbt_utils.at_least_one
+      - name: des
+        description: type of incident
+        tests:
+          - not_null
+          - dbt_utils.not_accepted_values:
+              values: ['(', ' ', ')','-']
+          - dbt_utils.at_least_one
+  - name: stg_incidents_2016
+    description: incidents in austin year 2016
+    columns:
+      - name: id
+        description: Unique identifier for each incident
+        tests:
+          - unique
+          - not_null
+          - dbt_utils.at_least_one
+      - name: des
+        description: type of incident
+        tests:
+          - not_null
+          - dbt_utils.not_accepted_values:
+              values: ['(', ' ', ')','-']
+          - dbt_utils.at_least_one

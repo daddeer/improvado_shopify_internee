@@ -13,3 +13,4 @@ From {{ source('austin_incidents','austin_incidents_2010')}}
 )
 
 Select * from incidents_2010
+WHERE des is not null
