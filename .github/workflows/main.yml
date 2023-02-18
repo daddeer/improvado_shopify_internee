@@ -19,7 +19,7 @@ jobs:
         run: echo $DBT_PROFILES_DIR
       - name: Run dbt
         env:
-          DBT_PROFILES_DIR: ${{ github.workspace }}/improvado_shopify_internee/dbt_shopify/improvado/
+          DBT_PROFILES_DIR: ${{ github.workspace }}/dbt_shopify/improvado/
         run: |
-          cd $DBT_PROFILES_DIR
+          cd ${{ github.workspace }}/dbt_shopify/improvado/
           dbt run --profiles-dir . --profile ${{ secrets.DBT_PROFILE }}
