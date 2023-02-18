@@ -3,6 +3,7 @@ name: dbt deploy
 on:
   schedule:
     - cron: "0 0 * * *"
+  workflow_dispatch:
 
 jobs:
   dbt-run:
@@ -15,4 +16,4 @@ jobs:
       - name: Run dbt
         env:
           DBT_PROFILES_DIR: ${{ github.workspace }}
-        run: dbt run --profiles-dir . --profile {{ secrets.DBT_PROFILE }}
+        run: dbt run --profiles-dir . --profile ${{ secrets.DBT_PROFILE }}
