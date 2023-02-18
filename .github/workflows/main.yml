@@ -13,6 +13,8 @@ jobs:
       - uses: actions/setup-python@v2
         with:
           python-version: '3.8'
+      - name: Install dbt
+        run: pip install dbt
       - name: Run dbt
         env:
           DBT_PROFILES_DIR: ${{ github.workspace }}
