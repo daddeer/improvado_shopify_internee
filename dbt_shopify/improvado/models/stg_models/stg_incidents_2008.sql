@@ -6,7 +6,6 @@ with incidents_2008 as (
     REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(descript, '/', '_'), '(', ''), ')', ''), '.', ''), ' ', '_'), '-', '_') as des,
     date,
     time,
-    address
   From {{ source('austin_incidents','austin_incidents_2008')}}
 )
 

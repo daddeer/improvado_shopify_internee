@@ -7,7 +7,6 @@ src_incidents as (
         descript as des,
         date,
         time,
-        address
 
     from source
 )
