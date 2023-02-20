@@ -51,3 +51,4 @@ jobs:
         run: |
           cd ${{ github.workspace }}/improvado_shopify_internee/
           dbt test --profiles-dir . --profile improvado
+
