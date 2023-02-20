@@ -13,26 +13,24 @@ jobs:
           python-version: '3.8'
       - name: Install dbt
         run: pip install dbt-bigquery
-      - name: Print DBT_PROFILES_DIR
-        run: echo $DBT_PROFILES_DIR
       - name: Install Dependencies
         env:
-          DBT_PROFILES_DIR: ${{ github.workspace }}/dbt_shopify/improvado/
+          DBT_PROFILES_DIR: ${{ github.workspace }}
         run: |
-          cd ${{ env.DBT_PROFILES_DIR }}
-          dbt deps
+          cd ${{ github.workspace }}/dbt_shopify/improvado/
+          dbt deps --profiles-dir . --profile improvado
       - name: Run dbt
         env:
-          DBT_PROFILES_DIR: ${{ github.workspace }}/dbt_shopify/improvado/
+          DBT_PROFILES_DIR: ${{ github.workspace }}
           BIGQUERY_KEY: ${{ secrets.BIGQUERY_KEY }}
         run: |
-          cd ${{ env.DBT_PROFILES_DIR }}
-          dbt run
+          cd ${{ github.workspace }}/dbt_shopify/improvado/
+          dbt run --profiles-dir $DBT_PROFILES_DIR --profile improvado
       - name: Run dbt tests
         env:
-          DBT_PROFILES_DIR: ${{ github.workspace }}/dbt_shopify/improvado/
+          DBT_PROFILES_DIR: ${{ github.workspace }}
           BIGQUERY_KEY: ${{ secrets.BIGQUERY_KEY }}
         run: |
-          cd ${{ env.DBT_PROFILES_DIR }}
-          dbt test
+          cd ${{ github.workspace }}/dbt_shopify/improvado/
+          dbt test --profiles-dir $DBT_PROFILES_DIR --profile improvado
 
