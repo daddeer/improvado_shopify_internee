@@ -5,7 +5,6 @@ with incidents_2008 as (
     unique_key as id, 
     REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(descript, '/', '_'), '(', ''), ')', ''), '.', ''), ' ', '_'), '-', '_') as des,
     date,
-    time,
   From {{ source('austin_incidents','austin_incidents_2008')}}
 )
 
