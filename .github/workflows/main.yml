@@ -1,3 +1,5 @@
+name: dbt deploy
+
 on:
   schedule:
     - cron: "0 0 * * *"
