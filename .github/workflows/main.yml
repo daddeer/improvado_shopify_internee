@@ -29,26 +29,26 @@ jobs:
       # and the DBT_PROFILES_DIR environment variable to locate the profiles directory
       - name: Install Dependencies
         env:
-          DBT_PROFILES_DIR: ${{ github.workspace }}/improvado_shopify_internee/
+          DBT_PROFILES_DIR: /home/runner/work/improvado_shopify_internee/
         run: |
-          cd ${{ github.workspace }}/improvado_shopify_internee/
+          cd /home/runner/work/improvado_shopify_internee/dbt_shopify/improvado/
           dbt deps --profiles-dir . --profile improvado
       # Run the dbt project using the "improvado" profile and the provided BigQuery key secret
       # and using the DBT_PROFILES_DIR environment variable to locate the profiles directory
       - name: Run dbt
         env:
-          DBT_PROFILES_DIR: ${{ github.workspace }}/improvado_shopify_internee/
+          DBT_PROFILES_DIR: /home/runner/work/improvado_shopify_internee/
           BIGQUERY_KEY: ${{ secrets.BIGQUERY_KEY }}
         run: |
-          cd ${{ github.workspace }}/improvado_shopify_internee/
+          cd /home/runner/work/improvado_shopify_internee/dbt_shopify/improvado/
           dbt run --profiles-dir . --profile improvado
       # Run tests for the dbt project using the "improvado" profile and the provided BigQuery key secret
       # and using the DBT_PROFILES_DIR environment variable to locate the profiles directory
       - name: Run dbt tests
         env:
-          DBT_PROFILES_DIR: ${{ github.workspace }}/improvado_shopify_internee/
+          DBT_PROFILES_DIR: /home/runner/work/improvado_shopify_internee/
           BIGQUERY_KEY: ${{ secrets.BIGQUERY_KEY }}
         run: |
-          cd ${{ github.workspace }}/improvado_shopify_internee/
+          cd /home/runner/work/improvado_shopify_internee/dbt_shopify/improvado/
           dbt test --profiles-dir . --profile improvado
 
