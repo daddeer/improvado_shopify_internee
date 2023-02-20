@@ -1,28 +1,40 @@
 name: dbt deploy
 
+# Schedule the workflow to run every day at midnight (UTC)
+# and allow manual triggering using the "workflow_dispatch" event
 on:
   schedule:
     - cron: "0 0 * * *"
   workflow_dispatch:
 
+# Define a single job named "dbt-run" to execute the workflow
 jobs:
   dbt-run:
+    # Use the latest version of the Ubuntu operating system as the job's execution environment
     runs-on: ubuntu-latest
     steps:
+      # Check out the repository's code into the runner's working directory
       - uses: actions/checkout@v2
+      # Set up the Python environment with version 3.8
       - uses: actions/setup-python@v2
         with:
           python-version: '3.8'
+      # Install the dbt package for interacting with BigQuery
       - name: Install dbt
         run: pip install dbt-bigquery
+      # Print the path to the directory where the dbt profiles are stored
       - name: Print DBT_PROFILES_DIR
         run: echo $DBT_PROFILES_DIR
+      # Install any dependencies required by the dbt project, using the "improvado" profile
+      # and the DBT_PROFILES_DIR environment variable to locate the profiles directory
       - name: Install Dependencies
         env:
           DBT_PROFILES_DIR: ${{ github.workspace }}/dbt_shopify/improvado/
         run: |
           cd ${{ github.workspace }}/dbt_shopify/improvado/
           dbt deps --profiles-dir . --profile improvado
+      # Run the dbt project using the "improvado" profile and the provided BigQuery key secret
+      # and using the DBT_PROFILES_DIR environment variable to locate the profiles directory
       - name: Run dbt
         env:
           DBT_PROFILES_DIR: ${{ github.workspace }}/dbt_shopify/improvado/
@@ -30,6 +42,8 @@ jobs:
         run: |
           cd ${{ github.workspace }}/dbt_shopify/improvado/
           dbt run --profiles-dir . --profile improvado
+      # Run tests for the dbt project using the "improvado" profile and the provided BigQuery key secret
+      # and using the DBT_PROFILES_DIR environment variable to locate the profiles directory
       - name: Run dbt tests
         env:
           DBT_PROFILES_DIR: ${{ github.workspace }}/dbt_shopify/improvado/
